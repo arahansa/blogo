@@ -1,13 +1,17 @@
 package main
 
 import (
+	c "blogo/go/controller"
+	"fmt"
 	"log"
 	"net/http"
+
 	"github.com/julienschmidt/httprouter"
-	c "blogo/go/controller"
 )
 
 func main() {
+	fmt.Println("Running blogo! ")
+
 	router := httprouter.New()
 	router.GET("/", c.Index)
 	router.GET("/board/:id", c.BoardGetId)
