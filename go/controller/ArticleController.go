@@ -11,13 +11,29 @@ import (
 	"net/http"
 	"strconv"
 )
+var repoArticle  = repository.Article {} 
+const (
+	basicLocation string = "resources/templates/board/"
+)
 
-const basicLocation string = "resources/templates/board/"
-
-func BoardList(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
+func BoardList(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
+	articles, pageInfo := repository.GetArticleListForPage(1)
 	data := map[string]interface{}{
 		"Title":    "Hello World!",
-		"articles": repository.GetArticleList(),
+		"articles": articles,
+		"pageInfo": pageInfo,
+	}
+	makeTemplateExcute("list", data, w)
+}
+
+func BoardListPage(w http.ResponseWriter, r *http.Request, ps httprouter.Params){
+	requestPage, err := strconv.Atoi(ps.ByName("pageNumber"))
+	checkErr(err)
+	articles, pageInfo := repository.GetArticleListForPage(requestPage)
+	data := map[string]interface{}{
+		"Title":    "Hello World!",
+		"articles": articles,
+		"pageInfo": pageInfo,
 	}
 	makeTemplateExcute("list", data, w)
 }
@@ -43,7 +59,7 @@ func BoardReadId(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
 func BoardUpdate(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
 	r.ParseForm()
 	article := new(domain.Article)
-	decoder := schema.NewDecoder()
+	decoder := schema.NewDecoder() //전역변수로 빼도 될까?
 	decoder.Decode(article, r.PostForm)
 	log.Println("Bofore Updated Article :", article)
 	id, err := strconv.Atoi(ps.ByName("id"))
@@ -85,4 +101,16 @@ func checkErr(err error) {
 	if err != nil {
 		log.Fatal(err)
 	}
+}
+
+
+func CreateDummyData(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
+	repoArticle.CreateDummyData()
+	http.Redirect(w, r, "/", http.StatusFound)
+}
+
+func RemoveAll(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
+	repository.RemoveAll()
+	repository.SetPrimaryKey()
+	http.Redirect(w, r, "/", http.StatusFound)
 }

@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"testing"
 )
+var id int
 
 func TestGetOneArticle(t *testing.T) {
 	aritlcleSave := domain.Article{}
@@ -23,9 +24,14 @@ func TestGetOneArticle(t *testing.T) {
 	fmt.Println(article)
 }
 
+func TestGetOutArticle(t *testing.T){
+	getArticle := GetOneArticle(1000)
+	fmt.Println("없는 게시글?:",getArticle)
+}
+
 func TestDeleteArticle(t *testing.T) {
-	DeleteArticle(25)
-	article := GetOneArticle(25)
+	DeleteArticle(id)
+	article := GetOneArticle(id)
 	fmt.Println(article)
 }
 
@@ -37,4 +43,19 @@ func TestGetArticleList(t *testing.T) {
 
 func TestCheckErr(t *testing.T) {
 	checkErr(nil)
+}
+
+func TestCount(t *testing.T){
+	fmt.Println("게시글 개수 : ",Count())
+}
+
+func TestGetArticleListPage(t *testing.T){
+	articles, pageinfo := GetArticleListForPage(1)
+	fmt.Println("1페이지 게시글들 :",articles)
+	fmt.Println("1페이지 페이지 정보 :", pageinfo)
+}
+
+func TestDummyAndRemoveAll(t *testing.T){
+	CreateDummyData()
+	RemoveAll()
 }
