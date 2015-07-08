@@ -112,5 +112,6 @@ func CreateDummyData(w http.ResponseWriter, r *http.Request, _ httprouter.Params
 
 func RemoveAll(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
 	repository.RemoveAll()
+	repository.SetPrimaryKey()
 	http.Redirect(w, r, "/", http.StatusFound)
 }

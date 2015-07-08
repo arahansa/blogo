@@ -62,7 +62,7 @@ func GetArticleListForPage(requestPage int) ([]domain.Article, domain.PageInfo){
 	pageinfo.BeginPage = beginPage
 	pageinfo.EndPage = endPage
 	pageinfo.TotalPageCount = totalPageCount
-	log.Println("카운트 :", totalArticleCount, ", Pageinfo:", pageinfo)
+	
 	//mongo 디비에서는 그냥 skip 으로 넘길 내용을 계산함^^;
 	skip := COUNT_PER_PAGE * (requestPage -1)
 	var articles []domain.Article
@@ -127,7 +127,10 @@ func CreateDummyData() {
 		Save(&article)
 	}
 }
-
 func RemoveAll(){
 	colArticle.RemoveAll(nil)
+}
+
+func SetPrimaryKey(){
+	colCounter.Update(bson.M{"_id": "article"}, bson.M{"$set": bson.M{"seq": 0}})
 }
