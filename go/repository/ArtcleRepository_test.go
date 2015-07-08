@@ -24,6 +24,11 @@ func TestGetOneArticle(t *testing.T) {
 	fmt.Println(article)
 }
 
+func TestGetOutArticle(t *testing.T){
+	getArticle := GetOneArticle(1000)
+	fmt.Println("없는 게시글?:",getArticle)
+}
+
 func TestDeleteArticle(t *testing.T) {
 	DeleteArticle(id)
 	article := GetOneArticle(id)

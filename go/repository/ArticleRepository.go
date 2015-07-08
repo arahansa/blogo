@@ -23,6 +23,10 @@ type Counter struct {
 	Seq int
 }
 
+type Article struct{
+	
+}
+
 func init() {
 	fmt.Println("DB start!!")
 	session, err := mgo.Dial("mongodb://arahansa:1234@localhost:27017/blogo")
@@ -117,7 +121,7 @@ func checkErr(err error) {
 	}
 }
 
-func CreateDummyData() {
+func (a *Article) CreateDummyData() {
 	var article domain.Article
 	for i := 0; i < 30; i++ {
 		article = domain.Article{}

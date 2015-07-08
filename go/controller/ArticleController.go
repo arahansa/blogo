@@ -11,10 +11,9 @@ import (
 	"net/http"
 	"strconv"
 )
-
+var repoArticle  = repository.Article {} 
 const (
 	basicLocation string = "resources/templates/board/"
-	
 )
 
 func BoardList(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
@@ -106,7 +105,7 @@ func checkErr(err error) {
 
 
 func CreateDummyData(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
-	repository.CreateDummyData()
+	repoArticle.CreateDummyData()
 	http.Redirect(w, r, "/", http.StatusFound)
 }
 
