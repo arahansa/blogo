@@ -10,10 +10,10 @@ type PageInfo struct {
 }
 
 func (b PageInfo) PrevBeginPage() int {
-	return b.BeginPage - int
+	return b.BeginPage - 1
 }
 func (b PageInfo) NextEndPage() int {
-	return b.EndPage + int
+	return b.EndPage + 1
 }
 
 func (b PageInfo) Pagenation() []int {
@@ -25,5 +25,5 @@ func (b PageInfo) Pagenation() []int {
 }
 
 func (b PageInfo) String() string {
-	return fmt.Sprintf("PageInfo(%d,%d, %d)", b.BeginPage, b.EndPage, b.TotalPageCount)
+	return fmt.Sprintf("PageInfo(BeginPage : %d, EndPage : %d, TotalPageCount : %d)", b.BeginPage, b.EndPage, b.TotalPageCount)
 }

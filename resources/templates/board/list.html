@@ -33,7 +33,7 @@
 				<tr>
 					<td>{{.Id}}</td>
 					<td>
-						<a href="/board/{{.Id}}">{{.Subject}}</a>
+						<a href="/board/read/{{.Id}}">{{.Subject}}</a>
 					</td>
 						<td>{{.Usernick}}</td>
 						<td>{{.DayWrite.Format "2006-01-02"}}</td>
@@ -45,12 +45,19 @@
 		<tfoot>
 			<tr>
 				<td colspan="5">
-					<a href="/boardFormWrite">글쓰기</a>
+					{{ if gt .pageInfo.BeginPage 10 }}
+						<a class="prev" href="/board/page/{{.pageInfo.PrevBeginPage}}">이전</a>
+					{{end}}
+					{{range .pageInfo.Pagenation}}
+						<a href="/board/page/{{.}}">{{.}}</a>
+					{{end}}
+					{{if lt .pageInfo.EndPage .pageInfo.TotalPageCount}}
+						<a href="/board/page/{{.pageInfo.NextEndPage}}">다음</a>
+					{{end}}
+					<a href="/board/formWrite">글쓰기</a>
 				</td>
 			</tr>
 		</tfoot>
 	</table>
 </div>
-
-
 {{template "footer"}}
