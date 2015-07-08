@@ -1,0 +1,41 @@
+{{template "header" .}}
+<form action='/board' method="post">
+	<table id="table_board" class="writeForm">
+		<colgroup>
+			<col width="150">
+			<col width="80%">
+		</colgroup>
+		<thead>
+			<tr>
+				<th colspan="2">글쓰기</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>제목</td>
+				<td><input type="text" name="Subject" size="20"><br></td>
+			</tr>
+			<tr>
+				<td>작성자</td>
+				
+				<td><input type="text" name="Usernick"></td>
+			</tr>
+			<tr>
+				<td>내용</td>
+				<td><textarea name="Content" rows="5" cols="40"></textarea></td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<td colspan="2">
+					<p style="text-align: center;">
+						<input type="submit" value="전송" />
+						<input type="button" value="돌아가기" onclick="history.go(-1)" />
+					</p>
+				</td>
+			</tr>
+		</tfoot>
+	</table>
+</form>
+
+{{template "footer"}}

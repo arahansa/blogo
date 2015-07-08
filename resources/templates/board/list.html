@@ -1,0 +1,56 @@
+{{template "header" .}}
+
+	<div class="container">
+		<div id="board">
+	<table id="table_board" class="list">
+		<colgroup>
+			<col width="150">
+			<col width="60%">
+			<col width="250">
+			<col width="100">
+			<col width="150">
+		</colgroup>
+		<thead>
+			<tr>
+				<th>번호</th>
+				<th>제목</th>
+				<th>닉네임</th>
+				<th>날짜</th>
+				<th>조회수</th>
+			</tr>
+		</thead>
+		<tbody>	
+				{{if not .articles}}
+				<tr>
+					<td colspan="5">
+						<p>	
+  						게시글이 없습니다.
+						</p>
+					</td>			
+				</tr>
+				{{else}}
+				{{range (.articles)}}		
+				<tr>
+					<td>{{.Id}}</td>
+					<td>
+						<a href="/board/{{.Id}}">{{.Subject}}</a>
+					</td>
+						<td>{{.Usernick}}</td>
+						<td>{{.DayWrite.Format "2006-01-02"}}</td>
+						<td>{{.NumRead}}</td>
+				</tr>
+				{{end}}
+				{{end}}
+		</tbody>
+		<tfoot>
+			<tr>
+				<td colspan="5">
+					<a href="/boardFormWrite">글쓰기</a>
+				</td>
+			</tr>
+		</tfoot>
+	</table>
+</div>
+
+
+{{template "footer"}}
