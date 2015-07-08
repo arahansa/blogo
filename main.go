@@ -11,7 +11,7 @@ func main() {
 	log.Println("Go Go Blogo!! ")
 	router := httprouter.New()
 
-	// !-- Begin Board L-CRUD-Form --! //
+	// !-- Begin Board L-CRUD-Form --!  //
 	router.GET("/", c.BoardList)
 	router.GET("/board/page/:pageNumber", c.BoardListPage)
 
