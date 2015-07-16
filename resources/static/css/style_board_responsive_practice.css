@@ -1,0 +1,287 @@
+@CHARSET "UTF-8";
+
+
+@import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:600);
+@import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);
+html {
+	margin: 0px;
+}
+
+body {
+	margin: 0px;
+	font-family: 'Hanna';
+	font-size: 16px;
+	/*font-family: '맑은 고딕', 'Helvetica', 'Arial', 'lucida grande','tahoma','verdana','arial','sans-serif';*/
+	color: white;
+	/* 100% 배경  */
+	background: url("https://lh5.googleusercontent.com/-JkLWSMovm_g/VJfbR3CFrrI/AAAAAAAAARE/gyflv9w2Kks/s700-no/backImage_700.png") center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	/*-webkit-text-stroke: 1px;*/
+
+	-webkit-text-stroke: 1px rgba(142, 128, 113, 0.5);
+	-moz-text-stroke: 1px rgba(142, 128, 113, 0.5);
+	-ms-text-shadow : 1px 1px 1px rgba(142,128,113, 0.3);
+	-moz-text-shadow : 1px 1px 1px rgba(142,128,113, 0.3);
+	-webkit-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+	 
+}
+
+/* HEADING FONT SIZES */
+h1 {
+    font-size: 3em; /* 48 / 16 */
+    line-height: 1em; /* 48 / 48 */
+    margin-bottom: .5em; /* 24 / 48 */
+}
+h2 {
+    font-size: 2.25em; /* 36 / 16 */
+    line-height: 1.333333333333333em; /* 48 / 36 */
+    margin-bottom: .6666666666666667em; /* 24 / 36 */
+}
+h3 {
+    font-size: 1.5em; /* 24 / 16 */
+    line-height: 1em; /* 24 / 24 */
+    margin-bottom: 1em; /* 24 / 24 */
+}
+h4 {
+    font-size: 1.3125em; /* 21 / 16 */
+    line-height: 1.142857142857143em; /* 24 / 21 */
+    margin-bottom: 1.142857142857143em; /* 24 / 21 */
+}
+h5 {
+    font-size: 1.125em; /* 18 / 16 */
+    line-height: 1.333333333333333em; /* 24 / 18 */
+    margin-bottom: 1.333333333333333em; /* 24 / 18 */
+}
+h6 {
+    font-size: 1em; /* 16 / 16 */
+    line-height: 1.5em; /* 24 / 16 */
+    margin-bottom: 1.5em; /* 24 / 16 */
+}
+p {
+    font-size: 0.9em; /* 16 / 16 */
+    line-height: 1.5em; /* 24 / 16 */
+    margin-bottom: 1.5em; /* 24 / 16 */
+}
+
+
+input {
+	color: #bdbab4;
+}
+
+/* 레이아웃 */
+/******************************************************/
+/* 모바일부터*/
+
+.container {
+	margin: 3em auto;
+	max-width: 1050px;
+	width: 95%;
+	min-height: 1050px;
+	height: 100%;
+}
+
+
+.board_table a {
+	text-decoration: none;
+}
+
+
+.board_table {
+	width: 100%;
+	border-radius: 15px;
+	border-spacing: 0px;
+	overflow: hidden;
+	font-size: 1.3em;
+	color: #8e8071;
+}
+
+.board_table th {
+	background-color: #b1a599;
+	color: white;
+	height: 25px;
+	font-size: 1.3em!important;
+	font-size: 1.3rem;
+	-webkit-text-stroke: 1px rgba(255, 255, 255, 0.1);
+	font-weight: 400;
+	padding: 10px 0;
+	padding: 0.6rem 0;
+	padding-left: 15px;
+}
+
+.board_table tr td:nth-child(2), .board_table tfoot tr td {
+	text-align: left;
+	padding-left: 10px;
+}
+.board_table thead tr th:first-child, .board_table thead tr th:nth-child(3), .board_table thead tr th:nth-child(4), .board_table thead tr th:nth-child(5),
+.board_table tbody tr td:first-child, .board_table tbody tr td:nth-child(3), .board_table tbody tr td:nth-child(4), .board_table tbody tr td:nth-child(5){
+	display:none;
+}
+.board_table tbody tr td:nth-child(2), .board_table thead tr th:nth-child(2){
+	width: 100%;
+}
+
+.board_table tbody td {
+	padding: 10px;
+	text-align: center;
+	background-color: white;
+	border-left: 1px solid gray;
+	border-bottom: 1px solid gray;
+}
+
+.board_table tbody td:first-child {
+	border-left: 0px;
+}
+
+.board_table tfoot tr td {
+	/*background-color: #b1a599;*/
+	background-color: #efe8e2;
+	width: 100%;
+	color: white;
+	height: 50px;
+	padding-left: 40px;
+}
+
+.board_table tfoot a {
+	color: black;
+}
+
+.board_table tfoot a:hover {
+	color: #0681ce;
+}
+
+
+
+/* List */
+.board_table.list tbody a {
+	color: #8e8071;
+}
+
+.board_table.list tbody a:link {
+	color: #8e8071;
+}
+
+.board_table.list tbody a:visited {
+	color: #8e8071;
+}
+
+.board_table.list tbody a:hover {
+	color: #0681ce;
+}
+
+.board_table.list tbody a:active {
+	color: #8e8071;
+}
+
+.board_table.list tbody tr:hover * {
+	color: #0681ce !important;
+}
+
+/*  WriteFrom  */
+.board_table.writeForm input[type=text], .board_table.writeForm textarea,
+	.board_table.reply textarea {
+	width: 90%;
+	height: 100%;
+	float: left;
+	/* border: 0px; */
+	padding-left: 5px;
+	font-size: 1em;
+	font-family: 'Hanna', sans-serif;
+	color: black;
+	-webkit-text-stroke: 1px rgba(142, 128, 113, 0.3);
+}
+
+.board_table.writeForm tfoot input[type=submit], .board_table.writeForm input[type=button],
+	.board_table.reply input[type=button] {
+	text-align: center;
+	font-size: 1em;
+	font-family: 'Hanna', sans-serif;
+	width: 100px;
+	background-color: black;
+	height: 35px;
+	color: white;
+}
+
+/*  Read  */
+.board_table.read tbody tr td:nth-child(2) {
+	color: black;
+}
+
+/* Reply */
+.board_table.reply {
+	background-color: white;
+	width: 100%;
+	/* border : 1px solid #EFE8E2; */
+	margin-bottom: 20px;
+}
+
+#table_header {
+	width: 100%;
+	height: 25px;
+	background-color: /* #B1A599; */#EFE8E2;
+	color: black;
+	text-align: center;
+	font-size: 18px;
+	-webkit-text-stroke: 1px rgba(255, 255, 255, 0.1);
+	font-weight: 400;
+	padding: 10px;
+	padding-left: 15px;
+}
+#table_contents{
+	padding: 25px;
+}
+
+.board_table.reply th {
+	background-color: #efe8e2;
+	border-top: 4px solid #ebc85e;
+	color: #8e8071;
+	padding: 30px;
+	border-bottom: 1px solid gray;
+}
+
+.board_table.reply textarea {
+	float: none;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	font-size: 20px;
+	border: 1px solid gray;
+}
+
+.board_table.reply input[type=button] {
+	background-color: #b1a599;
+	margin-bottom: 15px;
+	font-size: 20px;
+}
+
+.board_table.reply tbody div:first-child {
+	float: left;
+	width: 90%;
+}
+
+.board_table.reply tbody div:nth-child(2) {
+	width: 10%;
+	font-size: 12px;
+	float: left;
+}
+
+.board_table.reply tbody span {
+	font-size: 14px;
+}
+
+@media all and (min-width : 768px) {
+	.board_table thead tr th:first-child, .board_table thead tr th:nth-child(3), .board_table thead tr th:nth-child(4), .board_table thead tr th:nth-child(5),
+	.board_table tbody tr td:first-child, .board_table tbody tr td:nth-child(3), .board_table tbody tr td:nth-child(4), .board_table tbody tr td:nth-child(5){
+	display:table-cell;}
+.board_table tbody tr td:nth-child(2), .board_table thead tr th:nth-child(2){width: 60%;}
+}
+
+@media all and (min-width : 768px){
+	.board_table thead th {
+		display : block;		
+	}	
+}

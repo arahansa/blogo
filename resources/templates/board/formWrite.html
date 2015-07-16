@@ -1,28 +1,28 @@
 {{template "header" .}}
 <form action='/board' method="post">
-	<table id="table_board" class="writeForm">
+	<table id="table_board" class="writeForm board_table read">
 		<colgroup>
 			<col width="150">
 			<col width="80%">
 		</colgroup>
 		<thead>
 			<tr>
-				<th colspan="2">글쓰기</th>
+				<th colspan="2" id="articleRead">글쓰기</th>
 			</tr>
 		</thead>
 		<tbody>
 			<tr>
 				<td>제목</td>
-				<td><input type="text" name="Subject" size="20"><br></td>
+				<td><input type="text" name="Subject" size="20" placeholder="제목"><br></td>
 			</tr>
 			<tr>
 				<td>작성자</td>
 				
-				<td><input type="text" name="Usernick"></td>
+				<td><input type="text" name="Usernick" placeholder="작성자"></td>
 			</tr>
 			<tr>
 				<td>내용</td>
-				<td><textarea name="Content" rows="5" cols="40"></textarea></td>
+				<td><textarea name="Content" rows="5" cols="40" placeholder="내용"></textarea></td>
 			</tr>
 		</tbody>
 		<tfoot>

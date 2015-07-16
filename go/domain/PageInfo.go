@@ -12,6 +12,8 @@ type PageInfo struct {
 func (b PageInfo) PrevBeginPage() int {
 	return b.BeginPage - 1
 }
+
+// MAKE
 func (b PageInfo) NextEndPage() int {
 	return b.EndPage + 1
 }

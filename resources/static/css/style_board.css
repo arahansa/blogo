@@ -83,6 +83,7 @@ input {
 #table_board tr td:nth-child(2), #table_board tfoot tr td {
 	text-align: left;
 	padding-left: 10px;
+	width: 60%;
 }
 
 #table_board tbody td {
@@ -116,29 +117,12 @@ input {
 }
 
 /* List */
-#table_board.list tbody a {
-	color: #8e8071;
-}
-
-#table_board.list tbody a:link {
-	color: #8e8071;
-}
-
-#table_board.list tbody a:visited {
-	color: #8e8071;
-}
-
-#table_board.list tbody a:hover {
-	color: #0681ce;
-}
-
-#table_board.list tbody a:active {
-	color: #8e8071;
-}
-
-#table_board.list tbody tr:hover * {
-	color: #0681ce !important;
-}
+#table_board.list tbody a {color: #8e8071;}
+#table_board.list tbody a:link {color: #8e8071;}
+#table_board.list tbody a:visited {color: #8e8071;}
+#table_board.list tbody a:hover {color: #0681ce;}
+#table_board.list tbody a:active {color: #8e8071;}
+#table_board.list tbody tr:hover * {color: #0681ce !important;}
 
 /*  WriteFrom  */
 #table_board.writeForm input[type=text], #table_board.writeForm textarea,
@@ -170,63 +154,12 @@ input {
 	color: black;
 }
 
-/* Reply */
-#table_board.reply {
-	background-color: white;
-	width: 100%;
-	/* border : 1px solid #EFE8E2; */
-	margin-bottom: 20px;
-}
+#table_board .list  tbody tr td:nth-child(2){width: 60%;}
+#table_board .list tbody tr td:nth-child(5){width: 10%;}
 
-#table_header {
-	width: 100%;
-	height: 25px;
-	background-color: /* #B1A599; */#EFE8E2;
-	color: black;
-	text-align: center;
-	font-size: 18px;
-	-webkit-text-stroke: 1px rgba(255, 255, 255, 0.1);
-	font-weight: 400;
-	padding: 10px;
-	padding-left: 15px;
-}
-#table_contents{
-	padding: 25px;
-}
 
-#table_board.reply th {
-	background-color: #efe8e2;
-	border-top: 4px solid #ebc85e;
-	color: #8e8071;
-	padding: 30px;
-	border-bottom: 1px solid gray;
-}
-
-#table_board.reply textarea {
-	float: none;
-	margin-top: 10px;
-	margin-bottom: 10px;
-	font-size: 20px;
-	border: 1px solid gray;
-}
-
-#table_board.reply input[type=button] {
-	background-color: #b1a599;
-	margin-bottom: 15px;
-	font-size: 20px;
-}
-
-#table_board.reply tbody div:first-child {
-	float: left;
-	width: 90%;
-}
-
-#table_board.reply tbody div:nth-child(2) {
-	width: 10%;
-	font-size: 12px;
-	float: left;
-}
-
-#table_board.reply tbody span {
-	font-size: 14px;
+@media (max-width: 480px) {
+	#table_board {width: 100%;}
+	#table_board .list  tr td:first-child{display: none;}
+	#table_board .list tbody tr td:nth-child(2){width: 100%;}
 }
